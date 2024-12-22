@@ -1,0 +1,304 @@
+/* أسلوب الهكرز */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #00ffcc;
+    overflow: hidden;
+}
+
+/* حركة الخلفية (نظام ثنائي) */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.imgur.com/2HeMtWg.gif') repeat;
+    opacity: 0.2;
+    z-index: -1;
+}
+/* شريط أعلى الصفحة */
+#top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #00ffcc;
+    color: #000;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    animation: marquee 10s linear infinite;
+    z-index: 100;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* شاشة البداية */
+#binary-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeOut 4s forwards;
+}
+
+.binary-code {
+    font-size: 30px;
+    animation: blink 0.5s infinite;
+    color: #00ffcc;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* الشعار */
+.header {
+    text-align: center;
+    margin: 50px 0 20px;
+}
+
+.logo {
+    max-width: 120px;
+    margin-bottom: 10px;
+}
+
+/* الصفحات */
+.page {
+    display: none;
+    text-align: center;
+}
+
+.page.active {
+    display: block;
+}
+
+/* حقول الإدخال */
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 300px;
+    font-size: 16px;
+    border: 2px solid #00ffcc;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ffcc;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 10px #00ffcc;
+}
+
+/* الأزرار */
+.btn {
+    background: #00ffcc;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #009999;
+    transform: scale(1.1);
+}
+
+/* شاشة الخطأ */
+#error-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px #ff0000;
+    z-index: 2000;
+}
+
+#error-screen img {
+    max-width: 80%;
+    margin-bottom: 10px;
+}
+
+#error-screen .btn {
+    background: #ff0000;
+    color: #fff;
+}
+
+/* شاشة الحالة */
+#status-screen {
+    position: fixed;
+    bottom: 10%;
+    background: #009999;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    animation: fadeInOut 3s;
+}
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}/* الشروحات */
+#tutorial-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #00ffcc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 2000;
+    box-shadow: 0 0 15px #00ffcc;
+}
+
+#tutorial-screen p, #tutorial-screen ul {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#tutorial-screen ul {
+    list-style: none;
+    padding: 0;
+}
+
+#tutorial-screen ul li {
+    margin: 5px 0;
+    text-align: left;
+}
+/* زر الرجوع */
+.back-btn {
+    background: #ff0000;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background: #cc0000;
+}
+/* تصميم الصفحة ليكون متجاوبًا */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #00ffcc;
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 120px;
+    margin-bottom: 10px;
+}
+
+/* شريط أعلى الصفحة */
+#top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #00ffcc;
+    color: #000;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    z-index: 100;
+}
+/* شاشة البداية */
+#binary-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeOut 4s forwards;
+}
+
+.binary-code {
+    font-size: 30px;
+    animation: blink 0.5s infinite;
+    color: #00ffcc;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* محتوى الصفحة */
+.page {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+.page.active {
+    display: block;
+}
+
+/* تصغير الشاشة */
+@media (max-width: 600px) {
+    .btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
